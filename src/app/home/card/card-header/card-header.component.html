@@ -1,0 +1,7 @@
+<div class="header">
+    <h2 class="name">{{title}}</h2>
+    <h3 class="price">{{price | currency:"USD"}}</h3>
+    <ul class="ratings">
+        <li class="rating" *ngFor="let rating of ratings">⭐</li>
+    </ul>   
+</div>

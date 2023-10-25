@@ -1,0 +1,17 @@
+.cart-total{
+    background-color: antiquewhite; 
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 35vw;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.btn{
+    margin:10px;
+}
+
+.total{
+    padding: 10px;
+    line-height: 2;
+}

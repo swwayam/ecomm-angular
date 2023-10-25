@@ -1,0 +1,14 @@
+.header {
+    padding: 10px;
+  }
+  
+  .ratings {
+      display: flex;
+  }
+  
+  .rating {
+    list-style-type: none;
+  }
+  
+  
+  

@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="left-container">
+        <app-cart-card-header [title]="product.title" [ratings]="product.rating"></app-cart-card-header>
+        <app-cart-card-main [image]="product.image"></app-cart-card-main>
+    </div>
+    <div class="right-container">
+        <h3>{{product.price| currency:"USD"}}</h3>
+
+        <app-item-quantity (changeInQuantity)="changeQuantity($event)" [availableQuantity]="product.availableQuantity"
+            [quantity]="product.purchaseQuantity" [id]="product.id"></app-item-quantity>
+
+            
+        <app-cart-card-footer (removeBtnClick)="removeItemFromCart()" ></app-cart-card-footer>
+    </div>
+
+
+</div>

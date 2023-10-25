@@ -1,0 +1,16 @@
+.input{
+    width: 40px;
+    background-color: rgb(180, 179, 179);
+    text-align: center;
+}
+
+.quantity{
+    display: flex;
+    margin-top: 10px;
+}
+
+.btn{
+    padding: 0 5px;
+    border: none;
+    background-color: rgb(233, 241, 239);
+}

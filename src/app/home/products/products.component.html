@@ -1,0 +1,23 @@
+<main class="products-container">
+
+<div class="products products-4">
+    <app-card class="card" *ngFor="let product of productsDB | slice:0:4" [product]="product" ></app-card>
+</div>  
+
+<div class="products products-2">                              
+    <app-card class="card" *ngFor="let product of productsDB | slice:8:10" [product]="product" ></app-card>
+</div>  
+
+<app-card class="card" *ngFor="let product of productsDB | slice:4:5" [product]="product" ></app-card>
+
+<div class="products products-3">
+    <app-card class="card" *ngFor="let product of productsDB | slice:5:8" [product]="product" ></app-card>
+</div>  
+
+<div class="products products-2">
+    <app-card class="card" *ngFor="let product of productsDB | slice:10:12" [product]="product" ></app-card>
+</div>  
+
+
+</main>
+

@@ -1,0 +1,11 @@
+<!-- <app-link [link]="'home'"></app-link>
+<app-logo></app-logo> -->
+<nav class="navbar">
+    <a routerLink=""><app-logo [logo]="logo"></app-logo></a>
+    <ul class="links">
+        <app-link *ngFor="let linkObj of navbarLinks" [link]="linkObj.name"></app-link>
+        <a routerLink="cart" class="cart">
+            <app-icon [icon]="icon"></app-icon><span class="cart-count">{{itemCount()}}</span>
+        </a>
+    </ul>
+</nav>

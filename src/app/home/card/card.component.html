@@ -1,0 +1,13 @@
+<div class="card">
+    <app-card-header [title]="product.title" [price]="product.price" [ratings]="product.rating"></app-card-header>
+    <app-card-image [image]="product.image"></app-card-image>
+
+
+    <app-card-footer *ngIf="!product.isInCart" (itemToCart)="addToCartDB($event)" [id]="product.id"></app-card-footer>
+
+    <div class="quantity" *ngIf="product.isInCart">
+        <app-item-quantity (changeInQuantity)="changeQuantity($event)" [id]="product.id"
+            [availableQuantity]="product.availableQuantity" [quantity]="product.purchaseQuantity"></app-item-quantity>
+    </div>
+
+</div>

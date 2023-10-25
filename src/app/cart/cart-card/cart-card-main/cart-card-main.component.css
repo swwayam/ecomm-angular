@@ -1,0 +1,10 @@
+.image{
+    width: 200px;
+    height: 250px;
+}
+
+.image-holder{
+display: flex;
+justify-content: flex-start; 
+margin-left: 10px;   
+}

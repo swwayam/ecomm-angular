@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.815);
+    color: #fff;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+}
+
+.cart{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.cart-count{
+    margin: 0 5px;
+}

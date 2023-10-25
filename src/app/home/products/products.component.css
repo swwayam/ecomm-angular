@@ -1,0 +1,23 @@
+.products-container{
+    padding: 20px 80px;
+    background-color: rgb(252, 252, 252);
+}
+
+.products{
+    display: grid;
+    width: 100%;
+    column-gap: 20px;
+}
+
+.products-2{
+    grid-template-columns: auto auto;
+}
+
+.products-3{
+    grid-template-columns: auto auto auto;
+}   
+
+.products-4{
+    grid-template-columns: auto auto auto auto;
+}
+

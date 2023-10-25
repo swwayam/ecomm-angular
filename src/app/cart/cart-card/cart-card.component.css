@@ -1,0 +1,20 @@
+.card{
+    background-color: #ffffff;
+    width: 60vw;   
+    margin-top: 20px; 
+    margin-left: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;   
+}
+
+.left-container{
+    padding-bottom:20px ;
+}
+
+.right-container{
+    margin-left: 20px;
+}
+.price{
+    margin-top: 20px;
+}
