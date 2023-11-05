@@ -7,4 +7,5 @@ import { Component , Input} from '@angular/core';
 })
 export class LinkComponent {
   @Input() link !: string 
+  @Input() url !: string
 }

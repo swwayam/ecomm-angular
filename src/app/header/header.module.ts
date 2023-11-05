@@ -5,6 +5,7 @@ import { LinkComponent } from './link/link.component';
 import { LogoComponent } from './logo/logo.component';
 import { IconComponent } from './icon/icon.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,7 +18,8 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   exports:[NavbarComponent]
 })

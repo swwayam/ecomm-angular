@@ -1,13 +1,15 @@
-import { EventEmitter, Injectable, signal } from '@angular/core';
-import { Product } from '../Product.model';
+import { EventEmitter, Injectable, inject, signal } from '@angular/core';
+import { Product } from '../models/Product.model';
 import { Observable, Subject } from 'rxjs';
-
+import { Firestore, doc, setDoc, collection, getDocFromServer } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root',
 })
 export class ProductServiceService {
   private cartItems = new Subject<number>();
   cartData: Observable<number> = this.cartItems.asObservable();
+
+  #fs = inject(Firestore);
 
   private productsDB: Product[] = [
     {
@@ -154,6 +156,19 @@ export class ProductServiceService {
     },
   ];
 
+  async getC() {
+    let a = await getDocFromServer(doc(collection(this.#fs, 'product'))).then((value) => {
+      console.log(value.data);
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+    console.log(a,"a is ");
+    
+   
+  }
+
   cartCount = signal(0);
   cartPrice = signal(0);
 
@@ -208,8 +223,13 @@ export class ProductServiceService {
   pushToCart(id: number): void {
     for (let product of this.productsDB) {
       if (product.id == id) {
-        product.isInCart = true;
-        console.log(product);
+        setDoc(doc(collection(this.#fs, 'cart')), product)
+          .then((value) => {
+            console.log(value);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     }
     this.cartCount.update((curr) => curr + 1);

@@ -1,7 +1,8 @@
-import { Component , OnInit, OnDestroy, inject, WritableSignal} from '@angular/core';
+import { Component , 
+inject} from '@angular/core';
 import { Links } from '../Links.model';
 import { ProductServiceService } from 'src/app/services/product-service.service';
-import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,26 +10,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  private productService = inject(ProductServiceService)
+  #productService = inject(ProductServiceService)
 
 
   icon : string = "assets/Images/shopping-cart.png"
   logo : string = "assets/Images/brand.png"
-  readonly itemCount = this.productService.cartCount
 
-  navbarLinks : Links[] = [
-    {
-      name: "Sign In",
-      url: "signin"
-    },
-    {
-      name: "Orders",
-      url: "orders"
-    }
-  ]
+  isLoggedIn : boolean = this.authService.isLoggedIn()
 
-  constructor(){
+  readonly itemCount = this.#productService.cartCount
 
+  constructor(  private authService : AuthService){}
+
+  logout() : void{
+    this.authService.logout()
   }
 
   

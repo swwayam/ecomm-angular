@@ -1,7 +1,10 @@
 <div class="cart">
-    <section>
+    <section *ngIf="cartItemDB.length > 0">
         <app-cart-card *ngFor="let product of cartItemDB" [product]="product"></app-cart-card>
     </section>
-
+    <section *ngIf="cartItemDB.length == 0">
+        <h1>The cart is empty please add some items</h1>
+    </section>
     <app-cart-total [total]="cartPrice()"></app-cart-total>
 </div>
+

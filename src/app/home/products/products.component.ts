@@ -1,5 +1,6 @@
 import { Component, OnInit , OnDestroy} from '@angular/core';
-import { Product } from 'src/app/Product.model';
+import { Product } from 'src/app/models/Product.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   
   productsDB !: Product[]
 
-  constructor(private productService : ProductServiceService){}
+  constructor(private productService : ProductServiceService, private authService : AuthService){}
 
   ngOnInit(): void {
       this.productsDB = this.productService.getProducts();
@@ -19,5 +20,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
       this.productsDB = []
+      
   }
 }

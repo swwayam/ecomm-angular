@@ -7,6 +7,12 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { CartModule } from './cart/cart.module';
 import { AppRoutingModule } from './app-routing.module';
+import {provideFirebaseApp, initializeApp} from '@angular/fire/app'
+import {provideFirestore, getFirestore} from '@angular/fire/firestore'
+import firebaseConfig from 'src/environments/environments';
+import {getAuth, provideAuth} from '@angular/fire/auth'
+import { AuthModule } from './auth/auth.module';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +25,10 @@ import { AppRoutingModule } from './app-routing.module';
     HomeModule,
     SharedModule,
     CartModule,
-  
+    AuthModule,
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
     
   ],
   providers: [],
